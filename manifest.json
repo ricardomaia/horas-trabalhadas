@@ -1,0 +1,16 @@
+{
+    "name": "Calculadora de Horas Trabalhadas",
+    "short_name": "CalcHoras",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#007BFF",
+    "description": "Uma PWA para calcular horas trabalhadas e o valor devido.",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}

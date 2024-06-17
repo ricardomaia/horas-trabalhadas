@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Horas Trabalhadas</title>
+    <!-- Link para o CSS do Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Calculadora de Horas Trabalhadas</h1>
+        <div id="app">
+            <form id="person-form" class="mb-4">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="rate">Valor por Hora (R$):</label>
+                    <input type="number" id="rate" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+            </form>
+            <form id="entry-form" class="mb-4">
+                <div class="form-group">
+                    <label for="hours">Horas:</label>
+                    <input type="number" id="hours" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="minutes">Minutos:</label>
+                    <input type="number" id="minutes" class="form-control" min="0" max="59" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descrição:</label>
+                    <input type="text" id="description" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Adicionar Entrada</button>
+            </form>
+            <button id="clear-data" class="btn btn-danger btn-block mb-4">Limpar Dados</button>
+            <div id="entries">
+                <h2 class="mb-3">Entradas</h2>
+                <ul id="entries-list" class="list-group"></ul>
+            </div>
+            <div id="summary">
+                <h2 class="mt-4">Resumo</h2>
+                <p id="total-amount" class="font-weight-bold"></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <!-- Script do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

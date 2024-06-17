@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Horas Trabalhadas</title>
+    <!-- Link para o CSS do Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <img src="icon.png" id="logo">
+        <h1 class="text-center mb-4">Calculadora de Horas Trabalhadas</h1>
+        <div id="app">
+            <form id="person-form" class="mb-4">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="rate">Valor por Hora (R$):</label>
+                    <input type="number" id="rate" class="form-control" required>
+                </div>
+                <button type="submit" id="salvar" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i>
+                    Salvar</button>
+            </form>
+            <form id="entry-form" class="mb-4">
+                <div class="form-group">
+                    <label for="hours">Horas:</label>
+                    <input type="number" id="hours" class="form-control" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="minutes">Minutos:</label>
+                    <input type="number" id="minutes" class="form-control" value="00" min="0" max="59" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descrição:</label>
+                    <input type="text" id="description" class="form-control" value="Desenvolvimento">
+                </div>
+                <button type="submit" id="adicionar-entrada" class="btn btn-primary"><i class="fa-solid fa-plus"></i>
+                    Adicionar Entrada</button>
+            </form>
+            <button id="clear-data" class="btn btn-danger" id="limpar-dados"><i class="fa-solid fa-trash-can"></i>
+                Limpar Dados</button>
+            <div id="summary">
+                <h2 class="mt-4">Resumo</h2>
+                <p id="person-info" class="font-weight-bold"></p>
+                <ul id="entries-list" class="list-group mb-3"></ul>
+                <p id="total-amount" class="font-weight-bold"></p>
+                <button id="print-summary" class="btn btn-info"><i class="fa-solid fa-print"></i> Imprimir
+                    Resumo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="infoModalLabel">Informação</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modal-message"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Script do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
